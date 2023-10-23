@@ -24,10 +24,10 @@ public class Exc2 {
 
         //Leer palabra del usuario
 
-        System.out.print("Ingrese una palabra (por favor, sólo letras): "); 
+        System.out.print("Ingrese una palabra (por favor, sólo letras)"); 
 
         String palabra = teclado.nextLine(); 
-
+ 
     
 
         //Convierte a mayusc. 
@@ -40,13 +40,12 @@ public class Exc2 {
 
         for (int i=0; i < palabra.length(); i++) {
             
-            //####### 1er intento
             
            try {
                if(palabra.charAt(i) - 'A' <= index && palabra.charAt(i) - 'A' >= 0) {
                    conteos[palabra.charAt(i)-'A']++; 
                }  else {
-                   throw new ArrayIndexOutOfBoundsException(palabra.charAt(i) + " No es una letra o es un espacio vacio");
+                   throw new ArrayIndexOutOfBoundsException("'" + palabra.charAt(i) +  "'"  + " No es una letra o es un espacio vacio");
                } 
            } catch(IndexOutOfBoundsException e) {
               System.out.println(e);
@@ -66,7 +65,7 @@ public class Exc2 {
             if (conteos [i] != 0) 
 
             System.out.println((char)(i +'A') + ": " + conteos[i]);
-
+        
     }
     
 }
